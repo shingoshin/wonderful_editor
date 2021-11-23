@@ -37,6 +37,7 @@ group :development, :test do
   gem "pry-byebug"
   gem "pry-doc"
   gem "pry-rails"
+  gem "rails-erd" # , github: "paulwittmann/rails-erd", branch: "mavericks"
   gem "rspec-rails", "~> 5.0.0"
 end
 
