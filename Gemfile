@@ -32,12 +32,12 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   # Task.4 Gem の選定と導入
+  gem "factory_bot_rails"
+  gem "faker"
   gem "pry-byebug"
   gem "pry-doc"
   gem "pry-rails"
   gem "rspec-rails", "~> 5.0.0"
-  gem "factory_bot_rails"
-  gem "faker"
 end
 
 group :development do
