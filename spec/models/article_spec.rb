@@ -20,5 +20,23 @@
 require "rails_helper"
 
 RSpec.describe Article, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context "すでに同じ名前がある場合" do
+    it "title 作成に失敗" do
+      # binding.pry
+      # create(:user, id: 1)
+      create(:article, title: "aaa") # , user_id: 1)
+      article = build(:article, title: "aaa") # , user_id: 1)
+
+      expect(article).to be_invalid
+    end
+
+    it "body 作成に失敗" do
+      # binding.pry
+      # create(:user, id: 1)
+      create(:article, body: "aaa") # , user_id: 1)
+      article = build(:article, body: "aaa") # , user_id: 1)
+
+      expect(article).to be_invalid
+    end
+  end
 end
