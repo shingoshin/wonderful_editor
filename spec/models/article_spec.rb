@@ -20,5 +20,10 @@
 require "rails_helper"
 
 RSpec.describe Article, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context "title が空白である場合" do
+    let(:article) { build(:article, title: nil) }
+    it "title 作成に失敗" do
+      expect(article).not_to be_valid
+    end
+  end
 end
