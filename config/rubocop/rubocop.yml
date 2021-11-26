@@ -9,6 +9,7 @@ AllCops:
     - "bin/bundle"
     # チェック対象から除外
     - "lib/tasks/auto_annotate_models.rake"
+    - "spec/requests/api/v1/article_spec.rb"
 
 #################### Layout ################################
 

@@ -54,7 +54,7 @@ end
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Task.4 Gem の選定と導入
-gem "active_model_serializers"
+gem "active_model_serializers", "~> 0.10.0"
 gem "annotate"
 gem "devise_token_auth"
 gem "rubocop-rails"
