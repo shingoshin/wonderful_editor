@@ -10,6 +10,8 @@ class Api::V1::ArticlePreviewsController < ApplicationController
   # GET /api/v1/article_previews/1
   # GET /api/v1/article_previews/1.json
   def show
+    @api_v1_article_preview = api_v1_article_preview_params
+    render :show, @api_v1_article_preview
   end
 
   # POST /api/v1/article_previews
@@ -44,7 +46,7 @@ class Api::V1::ArticlePreviewsController < ApplicationController
 
     # Use callbacks to share common setup or constraints between actions.
     def set_api_v1_article_preview
-      @api_v1_article_preview = Api::V1::ArticlePreview.find(params[:id])
+      @api_v1_article_preview = Article.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
