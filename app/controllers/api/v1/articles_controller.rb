@@ -10,10 +10,12 @@ module Api::V1
       render json: articles, each_serializer: Api::V1::ArticlePreviewSerializer
     end
 
-    # # GET /api/v1/articles/1
-    # # GET /api/v1/articles/1.json
-    # def show
-    # end
+    # GET /api/v1/articles/1
+    # GET /api/v1/articles/1.json
+    def show
+      article = Article.find(params[:id])
+      render json: article, serializer: Api::V1::ArticleSerializer
+    end
 
     # # POST /api/v1/articles
     # # POST /api/v1/articles.json

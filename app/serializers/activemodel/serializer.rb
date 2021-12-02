@@ -1,0 +1,2 @@
+class ActiveModel::Serializer
+end
