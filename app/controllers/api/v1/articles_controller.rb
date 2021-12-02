@@ -19,15 +19,16 @@ module Api::V1
 
     # # POST /api/v1/articles
     # # POST /api/v1/articles.json
-    # def create
-    #   @article = Article.new(article_params)
+    def create
+      article = current_user.articles.create!(article_params)
+      render json: article, serializer: Api::V1::ArticleSerializer
+    end
 
-    #   if @article.save
-    #     render :show, status: :created, location: @article
-    #   else
-    #     render json: @article.errors, status: :unprocessable_entity
-    #   end
-    # end
+    private
+
+      def article_params
+        params.require(:article).permit(:title, :body)
+      end
 
     # # PATCH/PUT /api/v1/articles/1
     # # PATCH/PUT /api/v1/articles/1.json
@@ -44,17 +45,5 @@ module Api::V1
     # def destroy
     #   @article.destroy
     # end
-
-    # private
-
-    #   # Use callbacks to share common setup or constraints between actions.
-    #   def set_article
-    #     @article = Article.find(params[:id])
-    #   end
-
-    #   # Only allow a list of trusted parameters through.
-    #   def article_params
-    #     params.fetch(:article, {})
-    #   end
   end
 end
